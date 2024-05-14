@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DapperProject.Models.ProductDetails>
+﻿@model IEnumerable<DapperProject.Models.Items>
 @{
     ViewBag.Title = "EachProductDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <script type="text/javascript">
     document.write('<base href="' + document.location + '" />');
  </script>
@@ -19,8 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
 <script type="text/JavaScript" src="http://www.professorcloud.com/js/cloud-zoom.1.0.2.js"></script>
 <script src="~/Scripts/app.js"></script>
-
-<h3>Product Specification</h3>
+<h3>ORder Item</h3>
 <div ng-controller="MainCtrl">
     @foreach (var x in Model)
     {
@@ -35,14 +33,8 @@
                 <div class="col-sm-9 col-md-6">
                     <h3><span id="ItemName" style="color:black"><b>ItemName:</b></span></h3>
                     <h6><span id="ItemName" style="color:black">@x.ItemName</span></h6>
-                    <h3><span id="ItemName" style="color:black"><b>Features:</b></span></h3>
-                    <h6><span id="ItemName" style="color:black">@x.Features</span></h6>
-                    <h3><span id="ItemName" style="color:black"><b>Color:</b></span></h3>
-                    <h4><span id="ItemName" style="color:black">@x.color</span></h4>
-                    <h3><span id="ItemName" style="color:black"><b>Sim Type</b></span></h3>
-                    <h4><span id="ItemName" style="color:black">@x.SimType</span></h4>
-                    <h3><span id="ItemName" style="color:black"><b>Model:</b></span></h3>
-                    <h6><span id="ItemName" style="color:black">@x.model</span></h6>
+                    <h3><span id="ItemName" style="color:black"><b>Description:</b></span></h3>
+                    <h6><span id="ItemName" style="color:black">@x.Description</span></h6>
                     <h3><span id="ItemName" style="color:black"><b>Price:</b></span></h3>
                     <h6><span id="ItemName" style="color:black">@x.Price</span></h6>
                 </div>
@@ -52,7 +44,7 @@
                     <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
                 </a>
                 <a id="btn_add" href="@Url.Action("Index", "Home")" class="btn btn-info btn-lg" style="margin-left:60px">
-                    <span class="glyphicon glyphicon-eye-open"></span> Continue shopping
+                    <span class="glyphicon glyphicon-eye-open"></span> Continue
                 </a>
                 <br />
                 <br />

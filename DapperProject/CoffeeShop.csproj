@@ -270,7 +270,7 @@
     <Content Include="ZoomImages\MicrosoftLumia650.jpeg" />
     <Content Include="ZoomImages\MicrosoftXL.jpg" />
     <Content Include="ZoomImages\Nokia Lumia 830.jpg" />
-    <Content Include="ReadMe.md" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

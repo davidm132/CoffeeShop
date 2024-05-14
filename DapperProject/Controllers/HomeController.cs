@@ -24,40 +24,36 @@ namespace DapperProject.Controllers
             List<Items> list = new List<Items>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Items mob = new Items();
-                mob.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
-                mob.ItemName = dt.Rows[i]["ItemName"].ToString();
-                mob.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
-                mob.Url = mob.Id + ".png"; // dt.Rows[i]["Url"].ToString();
-                list.Add(mob);
+                Items model = new Items();
+                model.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                model.ItemName = dt.Rows[i]["ItemName"].ToString();
+                model.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
+                model.Url = model.Id + ".png";
+                list.Add(model);
             }
             return View(list);
-
         }
 
         public ActionResult AboutUs()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
         public ActionResult EachProductDetails(Items m)
         {
-            string mycmd = "select m.Id,m.ItemName,m.price,m.url,md.Features,md.model,md.color,md.SimType from Items m inner join ItemDetails md on m.Id=md.Id where m.Id="+m.Id+"";
+            string mycmd = "select Id,ItemName,Price,Description from Items where Id=" + m.Id;
             dt = new DataTable();
             dt = _mdal.SelactAll(mycmd);
-            List<ProductDetails> list = new List<ProductDetails>();
+            List<Items> list = new List<Items>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                ProductDetails mob = new ProductDetails();
-                mob.slno = Convert.ToInt32(dt.Rows[i]["Id"]);
-                mob.ItemName = dt.Rows[i]["ItemName"].ToString();
-                mob.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
-                mob.Url = dt.Rows[i]["Url"].ToString();
-                mob.Features= dt.Rows[i]["Features"].ToString();
-                mob.color = dt.Rows[i]["color"].ToString();
-                mob.SimType = dt.Rows[i]["SimType"].ToString();
-                list.Add(mob);
+                Items model = new Items();
+                model.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                model.ItemName = dt.Rows[i]["ItemName"].ToString();
+                model.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
+                model.Description = dt.Rows[i]["Description"].ToString();
+                model.Url = "./ZoomImages/" + model.Id + ".png";
+                list.Add(model);
             }           
             return View(list);         
         }

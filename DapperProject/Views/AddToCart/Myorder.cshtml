@@ -83,19 +83,15 @@ $(function () {
 <div id="dvContents">
     <table class="table table-hover" width="100%">
         <thead>
-            <img src="~/Templates/Header.jpg" width="100%" height="70px" />
+            <img src="~/Templates/Header.jpg" style="width:100%;height:70px;"/>
             <tr>
-               
-                <th>SlNO</th>
                 <th>Item Name</th>
-
                 <th>Image</th>
+                <th>Description</th>
                 <th>Price</th>
-
                 <th>Remove</th>
             </tr>
         </thead>
-
         <tbody>
             @foreach (var x in Model)
             {

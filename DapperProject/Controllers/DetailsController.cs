@@ -17,26 +17,34 @@ namespace DapperProject.Controllers
     {
         ItemDetailDAL _mdal = new ItemDetailDAL();
         DataTable dt;
-       
+
         public DetailsController()
         {
-         
+
         }
 
-      public ActionResult Index()
+        public ActionResult Index()
         {
-            string mycmd = "select * from productDetails";
+            string mycmd = "select * from Items";
             dt = new DataTable();
             dt = _mdal.SelactAll(mycmd);
-            List<productDetails> list = new List<productDetails>();
+            //List<productDetails> list = new List<productDetails>();
+            List<Items> list = new List<Items>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                productDetails pdet = new productDetails();
-                pdet.id = Convert.ToInt32(dt.Rows[i]["Id"]);
-                pdet.productName = dt.Rows[i]["productName"].ToString();
-                pdet.productDetail = dt.Rows[i]["productDetail"].ToString();
-                pdet.price =Convert.ToInt32(dt.Rows[i]["price"]);
-                list.Add(pdet);
+                //productDetails pdet = new productDetails();
+                //pdet.id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                //pdet.productName = dt.Rows[i]["ItemName"].ToString();
+                //pdet.productDetail = dt.Rows[i]["productDetail"].ToString();
+                //pdet.price = Convert.ToInt32(dt.Rows[i]["price"]);
+                //list.Add(pdet);
+                Items model = new Items();
+                model.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                model.ItemName = dt.Rows[i]["ItemName"].ToString();
+                model.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
+                model.Description = dt.Rows[i]["Description"].ToString();
+                model.Url = dt.Rows[i]["Url"].ToString();
+                list.Add(model);
             }
             return View(list);
         }
@@ -45,24 +53,19 @@ namespace DapperProject.Controllers
         {
             string mycmd = "select * from Items";
             dt = new DataTable();
-
             dt = _mdal.SelactAll(mycmd);
-
-
             List<Items> list = new List<Items>();
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Items mob = new Items();
-                mob.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
-                mob.ItemName = dt.Rows[i]["ItemName"].ToString();
-                mob.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
-                mob.Url = dt.Rows[i]["Url"].ToString();
-                list.Add(mob);
+                Items model = new Items();
+                model.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                model.ItemName = dt.Rows[i]["ItemName"].ToString();
+                model.Price = Convert.ToDouble(dt.Rows[i]["Price"]);
+                model.Description = dt.Rows[i]["Description"].ToString();
+                model.Url = dt.Rows[i]["Url"].ToString();
+                list.Add(model);
             }
             return View(list);
-
-        }
-            
         }
     }
+}
