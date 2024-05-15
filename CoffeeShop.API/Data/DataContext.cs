@@ -10,7 +10,7 @@ namespace CoffeeShop.API.Data
 		{
 		}
 
-		public DbSet<Items> Users { get; set; }
+		public DbSet<Items> Items { get; set; }
 	}
 
 }
