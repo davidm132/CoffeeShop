@@ -9,7 +9,6 @@ namespace CoffeeShop.Client.Controllers
 {
     public class HomeController : Controller
     {
-
         ItemDetailDAL _mdal = new ItemDetailDAL();
         DataTable dt;
 

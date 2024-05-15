@@ -220,7 +220,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Items.cs" />
-    <Compile Include="Models\ProductDetails.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

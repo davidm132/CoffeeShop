@@ -12,7 +12,7 @@
     <div class="row" style="padding-top:30px;background-color:transparent; text-align: center; ">
         <img class="" src="~/Images/MenuHeader.png" style="max-width:auto; height: 209px;" />
     </div>
-    <div class="row" style="padding-bottom:20px;">
+    <div class="row" style="padding-bottom:6px;">
         @foreach (var m in Model)
         {
             <div class="col-md-4 col-sm-6" style="background-color:transparent;text-align:center;">
@@ -23,9 +23,12 @@
                     <img class="a.photo" src="~/Images/@m.Url" style="overflow: hidden; position: relative; width: 200px; height: 200px; cursor: pointer " />
                 </a>
                 <p style="white-space:nowrap !important;">
-                   <a class="btn btn-primary" style="line-height:1;" href="@Url.Action("EachProductDetails", "Home",m)">Order <span class="glyphicon glyphicon-shopping-cart" style="color:#fff;"></span></a><span style="margin-left:10px; color: white;">(earn 1 point)</span>
+                    <a class="btn btn-primary" style="line-height:1;" href="@Url.Action("EachProductDetails", "Home",m)">Order <span class="glyphicon glyphicon-shopping-cart" style="color:#fff;font-size:20px;"></span></a> <span style="margin-left: 10px; color: #ff0000; line-height: 1.4; font-size: 20px;">*</span> <span style="color: white;">(earn 1 point)</span>
                 </p>
             </div>
         }
+    </div>
+    <div class="row" style="width: 100%; text-align: center; padding-bottom:40px; margin-left: 10px 0 10px 0;">
+        <span style="color: #ff0000; line-height: 1.4; font-size: 20px;">*</span> <span style="color: white;font-size:16px;"><i>Redeem your points for free coffee! (1 point = R1.00)</i></span>
     </div>
 </div>
