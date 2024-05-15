@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShop", "DapperProject\CoffeeShop.csproj", "{9FEF9EFA-9723-44D3-8631-683826EBDFC8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{00F77A6C-1712-4C57-8F5B-FE06F30F5295} = {00F77A6C-1712-4C57-8F5B-FE06F30F5295}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemDAL.cs", "MobileDAL.cs\ItemDAL.cs.csproj", "{D32E9165-1842-4185-9D53-752380A2FC90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShop.API", "CoffeeShop.API\CoffeeShop.API.csproj", "{00F77A6C-1712-4C57-8F5B-FE06F30F5295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{D32E9165-1842-4185-9D53-752380A2FC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32E9165-1842-4185-9D53-752380A2FC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32E9165-1842-4185-9D53-752380A2FC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F77A6C-1712-4C57-8F5B-FE06F30F5295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F77A6C-1712-4C57-8F5B-FE06F30F5295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F77A6C-1712-4C57-8F5B-FE06F30F5295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F77A6C-1712-4C57-8F5B-FE06F30F5295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
