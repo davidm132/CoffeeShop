@@ -4,37 +4,32 @@ using System.Data.SqlClient;
 
 namespace ItemDAL.cs
 {
-
-    public  class ItemDetailDAL
+    public class ItemDetailDAL
     {
         SqlCommand cmd;
         SqlDataAdapter da;
         DataSet ds;
-      
+
         public static SqlConnection connect()
         {
-             string connection = ConfigurationManager.ConnectionStrings["Connect"].ConnectionString;
-           SqlConnection con = new SqlConnection(connection);
-            if(con.State==ConnectionState.Open)
+            string connection = ConfigurationManager.ConnectionStrings["Connect"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+            if (con.State == ConnectionState.Open)
             {
                 con.Close();
-
             }
             else
             {
                 con.Open();
             }
-
-
             return con;
-
         }
 
         public bool DMLOpperation(string query)
         {
             cmd = new SqlCommand(query, ItemDetailDAL.connect());
-           int x= cmd.ExecuteNonQuery();
-            if(x==1)
+            int x = cmd.ExecuteNonQuery();
+            if (x == 1)
             {
                 return true;
             }
@@ -42,8 +37,6 @@ namespace ItemDAL.cs
             {
                 return false;
             }
-
-
         }
 
         public DataTable SelactAll(string query)
@@ -53,10 +46,5 @@ namespace ItemDAL.cs
             da.Fill(dt);
             return dt;
         }
-       
-
-
-
-
     }
 }
